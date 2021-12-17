@@ -1,0 +1,26 @@
+<div>
+  <div class="card">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm"></form>
+    <div>
+      <label for="username">Username</label>
+      <input id="username" name="username" [(ngModel)]="form.username" />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input id="password" name="password" [(ngModel)]="form.password" />
+    </div>
+    <div>
+      <label for="confirmPassword">Confirm Password</label>
+      <input
+        id="confirmPassword"
+        name="confirmPassword"
+        [(ngModel)]="form.confirmPassword"
+      />
+    </div>
+    <button>Sign Up</button>
+  </div>
+
+  <div *ngIf="isSuccessfull">Your registration successfull</div>
+
+  <div *ngIf="f.submitted"></div>
+</div>

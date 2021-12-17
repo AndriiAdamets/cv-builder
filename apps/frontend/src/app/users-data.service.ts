@@ -20,6 +20,10 @@ export class UsersDataService {
     return this.http.get<UserModel>(`${baseUrl}/${id}`);
   }
 
+  getCurrent(): Observable<UserModel> {
+    return this.http.get<UserModel>(`/api/profile`);
+  }
+
   create(data: any): Observable<any> {
     return this.http.post(baseUrl, data);
   }

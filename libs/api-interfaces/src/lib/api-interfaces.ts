@@ -3,3 +3,4 @@ export interface Message {
 }
 
 export * from './user-interface';
+export * from './server-responses-interface';

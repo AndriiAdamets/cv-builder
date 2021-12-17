@@ -15,12 +15,20 @@ export class UsersService {
   }
 
   async findAll(): Promise<User[]> {
-    return this.userModel.findAll();
+    return await this.userModel.findAll();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  async findOne(id: number) {
+    return await this.userModel.findByPk(id);
   }
+
+  async findByEmail(email: string) {
+    return await this.userModel.findOne({ where: { email } });
+  }
+
+  // async findOne(id: number) {
+  //   return await this.userModel.findOne({ where: { id } });
+  // }
 
   update(id: number, updateUserDto: UpdateUserDto) {
     return `This action updates a #${id} user`;
